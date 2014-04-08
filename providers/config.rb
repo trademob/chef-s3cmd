@@ -27,6 +27,7 @@ def place_config(resource, action)
   end
 
   template resource.filename do
+    cookbook 's3cmd'
     source "s3cfg.erb"
     variables(
       :access_key =>  resource.access_key,
